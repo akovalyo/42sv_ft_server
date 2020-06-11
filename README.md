@@ -2,16 +2,30 @@
 
 The goal of the project is to create a server through Docker based on Debian Buster (10) using Nginx and run Wordpress, phpMyAfmin and an SQL database. In addition server should be able to use SSL protocol.
 
-### Build image:
+### Usage:
+
+**Build image:**
 
 ```
 docker build --tag ft_server .
 ```
 
-### Run:
+**Run image as a container:**
 
 ```
+docker run -p 80:80 -p 443:443 --name CONTAINER -d NAME_OF_IMAGE
+```
 
+**Execute interactive bash shell on the running container:**
+
+```
+docker exec -it CONTAINER bash
+```
+
+**Start existing container:**
+
+```
+docker start CONTAINER
 ```
 
 ### Services:

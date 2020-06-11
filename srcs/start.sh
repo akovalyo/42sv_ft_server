@@ -1,3 +1,4 @@
+service nginx restart
+service mysql restart
 service php7.3-fpm start
-service nginx start
-service mysql start
+tail -f /dev/null
