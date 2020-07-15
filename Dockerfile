@@ -10,6 +10,8 @@ RUN apt-get install php-fpm php-cli php-mbstring php-mysql -y
 
 COPY srcs/latest.tar.gz ./
 COPY srcs/phpMyAdmin-5.0.2-english.tar.gz ./
+COPY srcs/autoindex_on.sh ./
+COPY srcs/autoindex_off.sh ./
 
 # RUN wget https://wordpress.org/latest.tar.gz
 # RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz
@@ -24,7 +26,6 @@ RUN ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/localhos
 # install wordpress
 RUN tar xvfz latest.tar.gz
 RUN mv wordpress /var/www/html/wordpress
-# RUN rm -rf latest.tar.gz
 COPY srcs/wp-config.php /var/www/html/wordpress
 RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html/wordpress/
