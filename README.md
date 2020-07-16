@@ -5,6 +5,7 @@ The goal of the project is to create a server through Docker based on Debian Bus
 ### Usage:
 
 image = ft_server
+
 container = server
 
 **Build image:**
