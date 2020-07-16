@@ -99,4 +99,4 @@ Build image based on *debian* with adding multiple services Wordpress, phpMyAdmi
 
 #### Container
 
-A cantainer is a runnable instance of an image
+A container is a runnable instance of an image
