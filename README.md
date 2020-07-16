@@ -4,28 +4,69 @@ The goal of the project is to create a server through Docker based on Debian Bus
 
 ### Usage:
 
+image = ft_server
+container = server
+
 **Build image:**
 
 ```
 docker build --tag ft_server .
 ```
+or
+```
+make build
+```
 
 **Run image as a container:**
 
 ```
-docker run -p 80:80 -p 443:443 --name CONTAINER -d NAME_OF_IMAGE
+docker run -p 80:80 -p 443:443 --name server -d ft_server
+```
+or
+```
+make run
 ```
 
 **Execute interactive bash shell on the running container:**
 
 ```
-docker exec -it CONTAINER bash
+docker exec -it server bash
+```
+or
+```
+make shell
 ```
 
 **Start existing container:**
 
 ```
-docker start CONTAINER
+docker start server
+```
+or
+```
+make start
+```
+
+**Stop existing container:**
+
+```
+docker stop server
+```
+or
+```
+make stop
+```
+
+**Turn autoindex off:**
+
+```
+make autoindex_off
+```
+
+**Turn autoindex on:**
+
+```
+make autoindex_on
 ```
 
 ### Services:
