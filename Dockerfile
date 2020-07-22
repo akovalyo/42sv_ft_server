@@ -6,13 +6,11 @@ RUN 	apt-get update -y && apt-get upgrade -y
 RUN	apt-get install wget vim nginx mariadb-server \
 			php-fpm php-cli php-mbstring php-mysql -y
 
-COPY 	srcs/latest.tar.gz ./
-COPY 	srcs/phpMyAdmin-5.0.2-english.tar.gz ./
 COPY 	srcs/autoindex_on.sh ./
 COPY 	srcs/autoindex_off.sh ./
 
-# RUN 	wget https://wordpress.org/latest.tar.gz
-# RUN	wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz
+RUN 	wget https://wordpress.org/latest.tar.gz
+RUN	wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz
 
 # configure ngnix
 RUN 	service nginx start
